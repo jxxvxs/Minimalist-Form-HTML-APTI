@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel = "icon" href="https://sia.uty.ac.id/image/favicon.png" type="image/x-icon">
+    <meta name="viewport" content="width=500; user-scalable=0;" />
+    <title>UAS - Jarvis</title>
+
+
+
+
+
+<!-- style di bawah digunakan untuk mengatur seluruh UI/Tampilan web. -->
+    <style>
+      html, body {
+        color: #ccc;
+        background: #223;
+        font-family: Calibri;
+      }
+      
+      .kotak_utama {
+        width: 360px;
+        margin: 0 auto;
+        padding: 5px 20px 0 20px;
+        border: 2px solid #ccc;
+        border-radius: 7px;
+      }
+      
+      .kotak_utama legend {
+        color: #ccc;
+        margin: 0 0 0 280px;
+        padding: 0;
+        letter-spacing: 0px;
+      }
+      
+      .pembungkus {
+        margin: 25px 0 25px 0;
+      }
+      
+      .info_ {
+        color: #ccc;
+        margin: 0;
+        font-size: 12px;
+        text-align: justify;
+      }
+      
+      .lbl-tb {
+        font-size: 12px;
+        text-transform: uppercase;
+      }
+      
+      .frm-ctrl {
+        color: #eee;
+        background: transparent;
+        margin: 5px 0;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        outline: none;
+        font-family: Calibri;
+      }
+      
+      .tb {
+        width: 350px;
+        font-size: 19px;
+      }
+      
+      .tombol:active {
+        color: #eee;
+        background: #808080;
+      }
+      
+      .tombol {
+        width: 360px;
+        height: 40px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        cursor: pointer;
+        transition: all 0.3s
+      }
+      
+      .tombol:hover {
+        color: #223;
+        background: #eee;
+      }
+      
+      .tabel {
+        width:100%;
+        background-color:transparent;
+        border-collapse:collapse;
+        border:0.1px solid transparent;
+        text-align: center;
+        font-family: Calibri;
+        padding: 10px;
+      }
+      
+      .bungkus_tabel {
+        box-shadow: 0px 0px 16px #181818;
+        border:2px solid #ccc;
+        width: auto;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+
+
+
+
+
+<!-- Heading 1 digunakan untuk tulisan UTY di tengah. -->
+  <body>
+    <h1 style="text-align:center;margin:8vh;">Universitas Teknologi Yogyakarta</h1> 
+
+
+
+
+
+<!-- Bagian kotak utama yang berisikan tabel, dan juga input. -->
+    <fieldset class="kotak_utama">
+      <legend>&nbsp;UAS APTI&nbsp;
+      </legend>
+      <div class="pembungkus">
+        <div class="bungkus_tabel" >
+          <table border="1" cellpadding="8" cellspacing="1" class="tabel" >
+            <tbody>
+              <tr>
+                <td colspan="2" style="border-bottom:1px solid #ccc;" >
+                  DATA MAHASISWA
+                </td>
+              </tr>
+              <tr style="font-weight: bold;" >
+                <td style="border-right:1px solid #ccc;">NIM
+                </td>
+                <td style="border-bottom:1px solid #ccc;">NAMA
+                </td>
+              </tr>
+              <tr>
+                <td style="border-top:1px solid #ccc;" width="50%" id="nim">
+                  5211011032
+                </td>
+                <td style="border-left:1px solid #ccc;" width="50%" id="nama">
+                  Jarvis Al Baasith
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="pembungkus">
+        <label for="inp_nim" class="lbl-tb">+ INPUT NIM
+        </label>
+        <br />
+        <input id="inp_nim" type="text" class="frm-ctrl tb" />
+        <p class="info_">Ubah data NIM dari tabel di atas, gunakan tombol dibawah untuk merubah data sesuai input!
+        </p>
+      </div>
+      <div class="pembungkus">
+        <label for="inp_nama" class="lbl-tb">+ INPUT NAMA
+        </label>
+        <br />
+        <input id="inp_nama" type="text" class="frm-ctrl tb" />
+        <p class="info_">Ubah data NAMA dari tabel di atas, jika kotak input kosong maka data akan diatur ulang!
+        </p>
+      </div>
+      <div class="pembungkus">
+        <button onclick="gantiData()" class="frm-ctrl tombol">UBAH DATA
+        </button>
+      </div>
+    </fieldset>
+
+
+
+
+
+<!-- Ini adalah script, berfungsi untuk mengubah data dari tabel sesuai dengan input. -->
+    <script>
+      function gantiData() {
+        let inp_ = document.getElementById('inp_nim').value;
+        let in2_ = document.getElementById('inp_nama').value;
+        if (inp_==="" || in2_==="") {
+          document.getElementById("nim").innerHTML = "5211011032";
+          document.getElementById("nama").innerHTML = "Jarvis Al Baasith";
+        }
+        else {
+          document.getElementById("nim").innerHTML = inp_;
+          document.getElementById("nama").innerHTML = in2_;
+        }
+      }
+    </script>
+  </body>
+</html>
