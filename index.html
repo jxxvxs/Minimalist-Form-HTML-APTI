@@ -150,7 +150,7 @@
         <label for="inp_nim" class="lbl-tb">+ INPUT NIM
         </label>
         <br />
-        <input id="inp_nim" type="text" class="frm-ctrl tb" maxlength="19" />
+        <input id="inp_nim" type="text" class="frm-ctrl tb" maxlength="15" />
         <p class="info_">Ubah data NIM dari tabel di atas, gunakan tombol dibawah untuk merubah data sesuai input!
         </p>
       </div>
@@ -158,7 +158,7 @@
         <label for="inp_nama" class="lbl-tb">+ INPUT NAMA
         </label>
         <br />
-        <input id="inp_nama" type="text" class="frm-ctrl tb" maxlength="19" />
+        <input id="inp_nama" type="text" class="frm-ctrl tb" maxlength="24" />
         <p class="info_">Ubah data NAMA dari tabel di atas, jika kotak input kosong maka data akan diatur ulang!
         </p>
       </div>
@@ -178,12 +178,12 @@
         let inp_ = document.getElementById('inp_nim').value;
         let in2_ = document.getElementById('inp_nama').value;
         if (inp_==="" || in2_==="") {
-          document.getElementById("nim").innerHTML = "5211011032";
-          document.getElementById("nama").innerHTML = "Jarvis Al Baasith";
+          document.getElementById("nim").innerText = "5211011032";
+          document.getElementById("nama").innerText = "Jarvis Al Baasith";
         }
         else {
-          document.getElementById("nim").innerHTML = inp_;
-          document.getElementById("nama").innerHTML = in2_;
+          document.getElementById("nim").innerText = inp_;
+          document.getElementById("nama").innerText = in2_;
         }
       }
     </script>
